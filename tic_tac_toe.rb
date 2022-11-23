@@ -39,15 +39,22 @@ class TicTacToeBoard
     print_board
   end
 
+  def print_row(row)
+    printable_row = row.map { |space| space.nil? ? '_' : space }
+    puts(printable_row.join(' '))
+  end
+
   def print_board
-    puts('hello!')
+    @board.each { |row| print_row(row) }
+    puts
   end
 end
 
 def play_game
   game = TicTacToeBoard.new
   game.move('cat')
-  game.move('cl')
+  game.move('tl')
+  game.move('bl')
 end
 
 play_game
